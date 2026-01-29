@@ -1,0 +1,10 @@
+services:
+  ewelink-bridge:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${WEB_PORT:-3000}:${WEB_PORT:-3000}"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
