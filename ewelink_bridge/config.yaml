@@ -1,1 +1,38 @@
+name: "eWeLink MQTT Bridge (Cloud-first)"
+slug: "ewelink_bridge"
+description: "Cloud-first eWeLink bridge for Home Assistant using MQTT discovery (LAN later)"
+version: "0.1.0"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: services
+boot: auto
+init: false
 
+ingress: true
+ingress_port: 8099
+panel_icon: "mdi:power-plug"
+
+map:
+  - data:rw
+
+options:
+  mqtt_host: "core-mosquitto"
+  mqtt_port: 1883
+  mqtt_username: ""
+  mqtt_password: ""
+  mqtt_base_topic: "ewelink"
+  discovery_prefix: "homeassistant"
+  log_level: "info"
+  simulator: true
+
+schema:
+  mqtt_host: str
+  mqtt_port: int
+  mqtt_username: str?
+  mqtt_password: password?
+  mqtt_base_topic: str
+  discovery_prefix: str
+  log_level: list(trace|debug|info|warn|error)
+  simulator: bool
