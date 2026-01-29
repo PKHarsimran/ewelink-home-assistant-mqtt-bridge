@@ -1,1 +1,10 @@
-
+{
+  "name": "ewelink-home-assistant-mqtt-bridge",
+  "version": "0.1.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mqtt": "^5.10.0"
+  }
+}
